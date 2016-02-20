@@ -30,9 +30,9 @@ class vim {
     require => Package["vim-package"],
   }
 
-  file { "vim-syntax-dir":
+  file { "vim-plugin-dir":
     ensure => directory,
-    path => "/home/$local_user/.vim/syntax",
+    path => "/home/$local_user/.vim/plugin",
     mode => 0755,
     owner => "$local_user",
     group => "$local_user",
@@ -42,7 +42,7 @@ class vim {
   file { "vim-syntax-link":
     ensure => link,
     target => "/usr/share/vim/addons/syntax/puppet.vim",
-    path => "/home/$local_user/.vim/syntax/puppet.vim",
+    path => "/home/$local_user/.vim/plugin/puppet.vim",
     require => Package["vim-puppet-package"],
   }
 
