@@ -20,6 +20,15 @@ class vim {
     ensure => present,
     require => Package["vim-package"],
   }
+  
+  file { "vim-dir":
+    ensure => directory,
+    path => "/home/$local_user/.vim",
+    mode => 0755,
+    owner => "$local_user",
+    group => "$local_user",
+    require => Package["vim-package"],
+  }
 
   file { "vim-syntax-dir":
     ensure => directory,
