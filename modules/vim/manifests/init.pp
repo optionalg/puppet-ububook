@@ -21,4 +21,20 @@ class vim {
     require => Package["vim-package"],
   }
 
+  file { "vim-syntax-dir":
+    ensure => directory,
+    path => "/home/$local_user/.vim/syntax",
+    mode => 0755,
+    owner => "$local_user",
+    group => "$local_user",
+    require => Package["vim-puppet-package"],
+  }
+
+  file { "vim-syntax-link":
+    ensure => link,
+    target => "/usr/share/vim/addons/syntax/puppet.vim",
+    path => "/home/$local_user/.vim/syntax/puppet.vim",
+    require => Package["vim-puppet-package"],
+  }
+
 }
