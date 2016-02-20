@@ -15,4 +15,10 @@ class vim {
     require => Package["vim-package"],
   }
 
+  package { "vim-puppet-package":
+    name => "vim-puppet"
+    ensure => present,
+    require => Package["vim-package"],
+  }
+
 }
