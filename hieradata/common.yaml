@@ -1,3 +1,12 @@
+misc-pkgs::pkgs:
+  - dkms
+  - htop
+  - mc
+  - curl
+  - wget
+  - aptitude
+  - python-software-properties
+
 apt::key:
   'virtualbox-key':
     id: '7B0FAB3A13B907435925D9C954422A4B98AB5139'
