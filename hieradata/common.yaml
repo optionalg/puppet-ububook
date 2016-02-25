@@ -1,0 +1,12 @@
+apt::key:
+  'virtualbox-key':
+    id: '7B0FAB3A13B907435925D9C954422A4B98AB5139'
+    ensure: 'present'
+    source: 'https://www.virtualbox.org/download/oracle_vbox.asc'
+
+apt::sources:
+  'virtualbox-repo':
+    comment: 'Virtualbox repository'
+    location: 'http://download.virtualbox.org/virtualbox/debian'
+    release: 'trusty'
+    repos: 'contrib'
