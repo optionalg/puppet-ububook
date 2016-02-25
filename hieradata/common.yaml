@@ -1,3 +1,9 @@
+classes:
+  - cron-puppet
+  - misc-pkgs
+  - tmux
+  - vim
+
 misc-pkgs::pkgs:
   - dkms
   - htop
@@ -6,6 +12,7 @@ misc-pkgs::pkgs:
   - wget
   - aptitude
   - python-software-properties
+  - perlbrew
 
 apt::key:
   'virtualbox-key':
