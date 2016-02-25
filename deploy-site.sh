@@ -7,10 +7,10 @@ apt-get -q -y update
 apt-get -q -y install git-core puppet
 
 # Backup the puppet directory if exists
-mv puppet/ puppet-backup
+mv /etc/puppet /etc/puppet-backup
 
 # Clone the 'puppet-ububook' repo
 git clone https://github.com/stiron/puppet-ububook.git /etc/puppet
 
 # Run Puppet initially to set up the auto-deploy mechanism
-puppet apply /etc/puppet/manifests/site.pp
+# puppet apply /etc/puppet/manifests/site.pp
