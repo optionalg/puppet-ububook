@@ -10,3 +10,6 @@ apt::sources:
     location: 'http://download.virtualbox.org/virtualbox/debian'
     release: 'trusty'
     repos: 'contrib'
+
+tmux::local_user: 'tmolnar'
+vim::local_user: 'tmolnar'

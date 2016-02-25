@@ -1,5 +1,7 @@
 class tmux {
 
+  $local_user = hiera('tmux::local_user', 'tmolnar')
+
   package { "tmux-package":
     name => "tmux",
     ensure => present,

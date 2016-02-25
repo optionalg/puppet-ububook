@@ -1,5 +1,7 @@
 class vim {
 
+  $local_user = hiera('vim::local_user', 'tmolnar')
+
   package { "vim-package":
     name => "vim",
     ensure => present,
