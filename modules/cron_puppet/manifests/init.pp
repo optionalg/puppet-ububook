@@ -7,6 +7,14 @@ class cron_puppet {
         owner   => root,
         group   => root,
     }
+    file { 'puppet-logrotate':
+        ensure => file,
+        path   => '/etc/logrotate.d/puppet',
+        source => 'puppet:///modules/cron_puppet/puppet.logrotate',
+        mode   => '0755',
+        owner  => root,
+        group  => root,
+    }
     cron { 'git-pull':
         ensure  => present,
         command => "cd /etc/puppet ; /usr/bin/git pull",
