@@ -29,7 +29,7 @@ class cron_puppet {
         minute  => '55',
         require => File['post-hook'],
     }
-        cron { 'puppet-apply-reboot':
+    cron { 'puppet-apply-reboot':
         ensure  => present,
         command => "/etc/puppet/.git/hooks/post-merge",
         user    => root,
