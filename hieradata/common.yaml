@@ -1,10 +1,10 @@
 classes:
-  - cron-puppet
-  - misc-pkgs
+  - cron_puppet
+  - misc_pkgs
   - tmux
   - vim
 
-misc-pkgs::pkgs:
+misc_pkgs::pkgs:
   - dkms
   - htop
   - mc
