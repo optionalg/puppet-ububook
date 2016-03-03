@@ -40,6 +40,8 @@ GIT will pick it up due to a cron job, and it triggers a Puppet run.
 * The cron job will run a `git pull` in a timely manner
 * If there is something to pull, it triggers the `merge-hook`
 * The `merge-hook` will run the `puppet apply` command
+* Another cron job will run a `puppet apply` with the `merge-hook`
+script to avoid configuration drifts
 
 It is a scalable solution without unnecessary overhead,
 but if there is any better solution, please do not
