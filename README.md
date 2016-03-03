@@ -1,6 +1,6 @@
 # NAME
 
-Puppet masterless solution
+Puppet Masterless
 
 # SYNOPSYS
 
@@ -12,7 +12,7 @@ In the work directory:
 
 ## Listing installed modules
 
-In the work directory
+In the work directory:
 
 `puppet module list --modulepath ./modules`
 
@@ -22,22 +22,19 @@ As root or with sudo:
 
 `puppet apply /etc/puppet/manifests/site.pp`
 
-or alternatively the `post-merge` script:
+or alternatively with the `post-merge` script:
 
 `/etc/puppet/.git/hooks/post-merge`
 
 # DESCRIPTION
 
-This is an ordinary masterless Puppet configuration
-included with modules to automate in relatively small
-environments (I personally use it at home).
+This is a general masterless Puppet configuration
+including some modules to automate in relatively small
+and flexible environments.
 
-It is based on DigitalOcean's howto, and this way a lot
-of thanks to the guys there.
-
-The DevOps person can maintain the system from a personal notebook,
-the Puppet Master is GIT for now. If there is anything new, then
-GIT will pick it up due to a cron job, and it triggers a Puppet run.
+The DevOps person can maintain the system from a remote computer,
+the Puppet Master is a Git repo now. If there is any change/new, then
+Git will pick that up with a cron job, and it triggers a Puppet run.
 
 ### Step by step:
 
@@ -47,8 +44,8 @@ GIT will pick it up due to a cron job, and it triggers a Puppet run.
 * Another cron job will run a `puppet apply` with the `merge-hook`
 script to avoid configuration drifts
 
-It is a scalable solution without unnecessary overhead,
-but if there is any better solution, please do not
+It is a scalable solution without any overhead,
+but if there is any better solution, do not
 hesitate to contact me.
 
 Thank you!
@@ -63,4 +60,4 @@ PuppetLabs:
 
 # MAINTAINED BY
 
-Tamas Molnar <stiron@gmail.com>
+Tamas Molnar - <stiron@gmail.com>
