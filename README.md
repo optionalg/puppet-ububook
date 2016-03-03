@@ -22,6 +22,10 @@ As root or with sudo:
 
 `puppet apply /etc/puppet/manifests/site.pp`
 
+or alternatively the `post-merge` script:
+
+`/etc/puppet/.git/hooks/post-merge`
+
 # DESCRIPTION
 
 This is an ordinary masterless Puppet configuration
