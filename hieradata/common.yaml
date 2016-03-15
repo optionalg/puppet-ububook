@@ -1,6 +1,6 @@
 classes:
-  - cron-puppet
-  - misc-pkgs
+  - cron_puppet
+  - misc_pkgs
   - tmux
   - vim
 

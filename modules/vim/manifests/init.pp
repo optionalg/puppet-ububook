@@ -11,7 +11,7 @@ class vim {
     ensure => file,
     path => "/home/$local_user/.vimrc",
     source => "puppet:///modules/vim/.vimrc",
-    mode => 0755,
+    mode => '0755',
     owner => "$local_user",
     group => "$local_user",
     require => Package["vim-package"],
@@ -26,7 +26,7 @@ class vim {
   file { "vim-dir":
     ensure => directory,
     path => "/home/$local_user/.vim",
-    mode => 0755,
+    mode => '0755',
     owner => "$local_user",
     group => "$local_user",
     require => Package["vim-package"],
@@ -35,7 +35,7 @@ class vim {
   file { "vim-plugin-dir":
     ensure => directory,
     path => "/home/$local_user/.vim/plugin",
-    mode => 0755,
+    mode => '0755',
     owner => "$local_user",
     group => "$local_user",
     require => Package["vim-puppet-package"],

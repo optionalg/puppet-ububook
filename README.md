@@ -1,6 +1,6 @@
 # NAME
 
-Puppet masterless solution
+Puppet Masterless
 
 # SYNOPSYS
 
@@ -12,7 +12,7 @@ In the work directory:
 
 ## Listing installed modules
 
-In the work directory
+In the work directory:
 
 `puppet module list --modulepath ./modules`
 
@@ -22,27 +22,30 @@ As root or with sudo:
 
 `puppet apply /etc/puppet/manifests/site.pp`
 
+or alternatively with the `post-merge` script:
+
+`/etc/puppet/.git/hooks/post-merge`
+
 # DESCRIPTION
 
-This is an ordinary masterless Puppet configuration
-included with modules to automate in relatively small
-environments (I personally use it at home).
+This is a general masterless Puppet configuration
+including some modules to automate in relatively small
+and flexible environments.
 
-It is based on DigitalOcean's howto, and this way a lot
-of thanks to the guys there.
-
-The DevOps person can maintain the system from a personal notebook,
-the Puppet Master is GIT for now. If there is anything new, then
-GIT will pick it up due to a cron job, and it triggers a Puppet run.
+The DevOps person can maintain the system from a remote computer,
+the Puppet Master is a Git repo now. If there is any change/new, then
+Git will pick that up with a cron job, and it triggers a Puppet run.
 
 ### Step by step:
 
 * The cron job will run a `git pull` in a timely manner
 * If there is something to pull, it triggers the `merge-hook`
 * The `merge-hook` will run the `puppet apply` command
+* Another cron job will run a `puppet apply` with the `merge-hook`
+script to avoid configuration drifts
 
-It is a scalable solution without unnecessary overhead,
-but if there is any better solution, please do not
+It is a scalable solution without any overhead,
+but if there is any better solution, do not
 hesitate to contact me.
 
 Thank you!
@@ -55,6 +58,25 @@ Original howto at DigitalOcean:
 PuppetLabs:
 [PuppetLabs website](https://puppetlabs.com/)
 
-# MAINTAINED BY
+# LICENSE
 
-Tamas Molnar <stiron@gmail.com>
+Author: Tamas Molnar
+
+Copyright 2015, Tamas Molnar.
+
+Licensed under the Apache License, Version 2.0 (the "License")
+
+You may not use this file except in compliance with the License.
+You may obtain a copy of the License at
+
+http://www.apache.org/licenses/LICENSE-2.0
+
+Unless required by applicable law or agreed to in writing, software
+distributed under the License is distributed on an "AS IS" BASIS,
+WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+See the License for the specific language governing
+permissions and limitations under the License.
+
+# AUTHOR
+
+Tamas Molnar - <stiron@gmail.com>
