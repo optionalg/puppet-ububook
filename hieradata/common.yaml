@@ -5,6 +5,7 @@ classes:
   - vim
 
 misc-pkgs::pkgs:
+  - lm-sensors
   - dkms
   - htop
   - mc
