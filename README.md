@@ -1,8 +1,8 @@
 # NAME
 
-Puppet Masterless
+Puppet masterless / nodeless module package
 
-# SYNOPSYS
+# SYNOPSIS
 
 ## Installing modules
 
@@ -29,8 +29,8 @@ or alternatively with the `post-merge` script:
 # DESCRIPTION
 
 This is a general masterless Puppet configuration
-including some modules to automate in relatively small
-and flexible environments.
+including some modules to automate in small, medium, big
+and very flexible environments.
 
 The DevOps person can maintain the system from a remote computer,
 the Puppet Master is a Git repo now. If there is any change/new, then
@@ -42,17 +42,14 @@ Git will pick that up with a cron job, and it triggers a Puppet run.
 * If there is something to pull, it triggers the `merge-hook`
 * The `merge-hook` will run the `puppet apply` command
 * Another cron job will run a `puppet apply` with the `merge-hook`
-script to avoid configuration drifts
+script to avoid configuration drifts if there is nothing to merge
 
-It is a scalable solution without any overhead,
-but if there is any better solution, do not
-hesitate to contact me.
-
-Thank you!
+It is a scalable, flexible solution without any server overhead,
+there is not any running agents.
 
 # REFERENCES
 
-Original howto at DigitalOcean:
+Masterless howto at DigitalOcean:
 [Masterless Puppet @DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-masterless-puppet-environment-on-ubuntu-14-04)
 
 PuppetLabs:
@@ -79,4 +76,4 @@ permissions and limitations under the License.
 
 # AUTHOR
 
-Tamas Molnar - <stiron@gmail.com>
+Tamas Molnar <stiron@gmail.com>
