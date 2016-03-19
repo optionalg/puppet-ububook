@@ -11,7 +11,7 @@ class cron_puppet {
         ensure => file,
         path   => '/etc/logrotate.d/puppet',
         source => 'puppet:///modules/cron_puppet/puppet.logrotate',
-        mode   => '0755',
+        mode   => '0644',
         owner  => root,
         group  => root,
     }
