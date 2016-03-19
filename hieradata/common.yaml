@@ -1,3 +1,4 @@
+---
 classes:
   - cron_puppet
   - misc_pkgs
