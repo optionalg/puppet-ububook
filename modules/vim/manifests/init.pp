@@ -1,4 +1,7 @@
-class vim($local_user = 'tmolnar') {
+class vim(
+  $local_user = 'tmolnar',
+  $vim_for_root = 'enable'
+) {
   package { 'vim-package':
     ensure => present,
     name   => 'vim',
@@ -12,6 +15,18 @@ class vim($local_user = 'tmolnar') {
     owner   => $local_user,
     group   => $local_user,
     require => Package['vim-package'],
+  }
+
+  if $vim_for_root == 'enable' {
+    file { 'vim-config-root':
+      ensure  => file,
+      path    => '/root/.vimrc',
+      source  => 'puppet:///modules/vim/.vimrc',
+      mode    => '0755',
+      owner   => 'root',
+      group   => 'root',
+      require => Package['vim-package'],
+    }
   }
 
   package { 'vim-puppet-package':
