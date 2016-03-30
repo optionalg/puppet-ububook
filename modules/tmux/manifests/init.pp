@@ -1,10 +1,7 @@
-class tmux {
-
-  $local_user = hiera('tmux::local_user', 'tmolnar')
-
+class tmux($local_user = 'tmolnar') {
   package { 'tmux-package':
-    name   => 'tmux',
     ensure => present,
+    name   => 'tmux',
   }
 
   file { 'tmux-config':
@@ -16,5 +13,4 @@ class tmux {
     group   => $local_user,
     require => Package['tmux-package'],
   }
-
 }
