@@ -7,6 +7,12 @@ class vim(
     name   => 'vim',
   }
 
+  package { 'vim-addon-manager-package':
+    ensure  => present,
+    name    => 'vim-addon-manager',
+    require => Package['vim-package'],
+  }
+
   file { 'vim-config':
     ensure  => file,
     path    => "/home/${local_user}/.vimrc",
@@ -34,29 +40,9 @@ class vim(
     name    => 'vim-puppet',
     require => Package['vim-package'],
   }
-  
-  file { 'vim-dir':
-    ensure  => directory,
-    path    => "/home/${local_user}/.vim",
-    mode    => '0755',
-    owner   => $local_user,
-    group   => $local_user,
-    require => Package['vim-package'],
-  }
 
-  file { 'vim-plugin-dir':
-    ensure  => directory,
-    path    => "/home/${local_user}/.vim/plugin",
-    mode    => '0755',
-    owner   => $local_user,
-    group   => $local_user,
-    require => Package['vim-puppet-package'],
-  }
-
-  file { 'vim-syntax-link':
-    ensure  => link,
-    target  => '/usr/share/vim/addons/syntax/puppet.vim',
-    path    => "/home/${local_user}/.vim/plugin/puppet.vim",
-    require => Package['vim-puppet-package'],
+  exec { 'enable-vim-puppet':
+    command => 'vim-addons -w install puppet',
+    creates => '/var/lib/vim/addons/syntax/puppet.vim',
   }
 }
