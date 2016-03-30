@@ -1,10 +1,7 @@
-class vim {
-
-  $local_user = hiera('vim::local_user', 'tmolnar')
-
+class vim($local_user = 'tmolnar') {
   package { 'vim-package':
-    name   => 'vim',
     ensure => present,
+    name   => 'vim',
   }
 
   file { 'vim-config':
@@ -18,8 +15,8 @@ class vim {
   }
 
   package { 'vim-puppet-package':
-    name    => 'vim-puppet',
     ensure  => present,
+    name    => 'vim-puppet',
     require => Package['vim-package'],
   }
   
@@ -47,5 +44,4 @@ class vim {
     path    => "/home/${local_user}/.vim/plugin/puppet.vim",
     require => Package['vim-puppet-package'],
   }
-
 }
