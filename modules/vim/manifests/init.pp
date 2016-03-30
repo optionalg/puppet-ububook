@@ -45,6 +45,6 @@ class vim(
     command => 'vim-addons -w install puppet',
     creates => '/var/lib/vim/addons/syntax/puppet.vim',
     path    => ['/usr/bin', '/usr/sbin'],
-    require => Package['vim-addon-manager-package'],
+    require => [ Package['vim-addon-manager-package'], Package['vim-puppet-package'] ],
   }
 }
