@@ -16,7 +16,7 @@ In the work directory:
 
 `puppet module list --modulepath ./modules`
 
-## Applying the configuration (just for experimenting)
+## Applying the configuration by hand
 
 As root or with sudo:
 
