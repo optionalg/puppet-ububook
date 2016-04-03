@@ -1,3 +1,13 @@
+#
+# Class for installing and configuring
+# my VIM environment
+#
+# Params:
+#
+# local_user: user to configure vim to
+# vim_for_root: enables vim configuration for root
+#
+
 class vim(
   $local_user = 'tmolnar',
   $vim_for_root = 'enable'
@@ -6,13 +16,11 @@ class vim(
     ensure => present,
     name   => 'vim',
   }
-
   package { 'vim-addon-manager-package':
     ensure  => present,
     name    => 'vim-addon-manager',
     require => Package['vim-package'],
   }
-
   file { 'vim-config':
     ensure  => file,
     path    => "/home/${local_user}/.vimrc",
@@ -22,7 +30,6 @@ class vim(
     group   => $local_user,
     require => Package['vim-package'],
   }
-
   if $vim_for_root == 'enable' {
     file { 'vim-config-root':
       ensure  => file,
@@ -34,13 +41,11 @@ class vim(
       require => Package['vim-package'],
     }
   }
-
   package { 'vim-puppet-package':
     ensure  => present,
     name    => 'vim-puppet',
     require => Package['vim-package'],
   }
-
   exec { 'enable-vim-puppet':
     command => 'vim-addons -w install puppet',
     creates => '/var/lib/vim/addons/syntax/puppet.vim',

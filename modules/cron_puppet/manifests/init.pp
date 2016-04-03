@@ -1,3 +1,7 @@
+#
+# Class for configuring masterless Puppet
+#
+
 class cron_puppet {
     file { 'post-hook':
         ensure => file,

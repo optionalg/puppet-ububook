@@ -1,3 +1,12 @@
+#
+# Class for installing and configuring
+# my tmux environment
+#
+# Params:
+#
+# local_user: user to configure vim to
+#
+
 class tmux($local_user = 'tmolnar') {
   package { 'tmux-package':
     ensure => present,
