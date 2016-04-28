@@ -8,13 +8,13 @@ Puppet masterless / nodeless module package
 
 In the work directory:
 
-`puppet module install --target-dir ./modules puppetlabs-apt`
+`puppet module install --target-dir /etc/puppet/modules puppetlabs-apt`
 
 ## Listing installed modules
 
 In the work directory:
 
-`puppet module list --modulepath ./modules`
+`puppet module list --modulepath /etc/puppet/modules`
 
 ## Applying the configuration by hand
 
@@ -52,8 +52,8 @@ there is not any running agents.
 Masterless howto at DigitalOcean:
 [Masterless Puppet @DigitalOcean](https://www.digitalocean.com/community/tutorials/how-to-set-up-a-masterless-puppet-environment-on-ubuntu-14-04)
 
-PuppetLabs:
-[PuppetLabs website](https://puppetlabs.com/)
+Puppet:
+[Puppet website](https://puppet.com)
 
 # LICENSE
 
