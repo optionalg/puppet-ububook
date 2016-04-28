@@ -16,11 +16,6 @@ class vim(
     ensure => present,
     name   => 'vim',
   }
-  package { 'vim-addon-manager-package':
-    ensure  => present,
-    name    => 'vim-addon-manager',
-    require => Package['vim-package'],
-  }
   file { 'vim-config':
     ensure  => file,
     path    => "/home/${local_user}/.vimrc",
@@ -46,11 +41,17 @@ class vim(
     name    => 'vim-puppet',
     require => Package['vim-package'],
   }
+  package { 'vim-addon-manager-package':
+    ensure  => present,
+    name    => 'vim-addon-manager',
+    require => Package['vim-package'],
+  }
   exec { 'enable-vim-puppet':
-    command => 'vim-addons -w install puppet',
-    creates => '/var/lib/vim/addons/syntax/puppet.vim',
-    path    => ['/usr/bin', '/usr/sbin'],
-    require => [
+    command     => 'vim-addons -w install puppet',
+    creates     => '/var/lib/vim/addons/syntax/puppet.vim',
+    path        => ['/usr/bin', '/usr/sbin'],
+    environment => ['HOME=/root'],
+    require     => [
       Package['vim-addon-manager-package'],
       Package['vim-puppet-package'],
     ],
