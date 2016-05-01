@@ -59,7 +59,7 @@ Puppet:
 
 Author: Tamas Molnar
 
-Copyright 2015, Tamas Molnar.
+Copyright 2015, 2016, Tamas Molnar.
 
 Licensed under the Apache License, Version 2.0 (the "License")
 
