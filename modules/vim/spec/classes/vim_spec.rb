@@ -16,4 +16,17 @@ describe 'vim' do
   it { is_expected.to contain_package('vim-puppet-package').with_ensure('present') }
   it { is_expected.to contain_package('vim-addon-manager-package').with_ensure('present') }
   it { is_expected.to contain_exec('enable-vim-puppet') }
+
+  context 'with vim_for_root => enable' do
+    let(:vim_for_root) { 'enable' }
+
+    it { is_expected.to contain_file('vim-config-root').with(
+      'ensure'  => 'file',
+      'path'    => '/root/.vimrc',
+      'source'  => 'puppet:///modules/vim/.vimrc',
+      'mode'    => '0755',
+      'owner'   => 'root',
+      'group'   => 'root',
+    ) }
+  end
 end
