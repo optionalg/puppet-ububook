@@ -11,7 +11,7 @@ describe 'vim' do
     'source'  => 'puppet:///modules/vim/.vimrc',
     'mode'    => '0755',
     'owner'   => 'tmolnar',
-    'group'   => 'tmolnar',
+    'group'   => 'tmolnar'
   ) }
   it { is_expected.to contain_package('vim-puppet-package').with_ensure('present') }
   it { is_expected.to contain_package('vim-addon-manager-package').with_ensure('present') }
@@ -26,7 +26,7 @@ describe 'vim' do
       'source'  => 'puppet:///modules/vim/.vimrc',
       'mode'    => '0755',
       'owner'   => 'root',
-      'group'   => 'root',
+      'group'   => 'root'
     ) }
   end
 end
