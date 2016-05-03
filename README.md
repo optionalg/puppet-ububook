@@ -8,6 +8,11 @@ Puppet masterless / nodeless module package
     * [Installing modules](#installing-modules)
     * [Listing installed modules](#listing-installed-modules)
     * [Applying the configuration by hand](#applying-the-configuration-by-hand)
+2. [Description](#description)
+    * [Step by step](#step-by-step)
+3. [References](#references)
+4. [License](#license)
+5. [Author](#author)
 
 # SYNOPSIS
 
