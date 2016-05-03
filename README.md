@@ -1,18 +1,18 @@
-# NAME
-
-Puppet masterless / nodeless module package
-
 #### Table of contents
-
-1. [Synopsis](#synopsis)
+1. [Name](#name)
+2. [Synopsis](#synopsis)
     * [Installing modules](#installing-modules)
     * [Listing installed modules](#listing-installed-modules)
     * [Applying the configuration by hand](#applying-the-configuration-by-hand)
-2. [Description](#description)
+3. [Description](#description)
     * [Step by step](#step-by-step)
-3. [References](#references)
-4. [License](#license)
-5. [Author](#author)
+4. [References](#references)
+5. [License](#license)
+6. [Author](#author)
+
+# NAME
+
+Puppet masterless / nodeless module package
 
 # SYNOPSIS
 
