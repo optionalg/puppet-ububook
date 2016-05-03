@@ -4,7 +4,7 @@ Puppet masterless / nodeless module package
 
 #### Table of contents
 
-1 [Synopsis](#synopsis)
+1. [Synopsis](#synopsis)
     * [Installing modules](#installing-modules)
     * [Listing installed modules](#listing-installed-modules)
     * [Applying the configuration by hand](#applying-the-configuration-by-hand)
