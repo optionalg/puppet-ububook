@@ -5,8 +5,8 @@ Puppet::Type.type(:vim_addons).provide(:vim_addons) do
   def is_installed(plugin)
     begin
       output = vim_addons(['status', plugin])
-    rescue
-      Puppet.debug("#is_installed ran on error: #{e.inspect}")
+    rescue Puppet::ExecutionFailure => efailure
+      Puppet.debug("#is_installed ran on error: #{efailure.inspect}")
       return nil
     end
     return true if output.split("\n")[1] =~ /installed/i
