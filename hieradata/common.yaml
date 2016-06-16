@@ -15,6 +15,7 @@ misc_pkgs::pkgs:
   - python-software-properties
   - perlbrew
   - lm-sensors
+  - ruby-dev
 
 apt::key:
   'virtualbox-key':
