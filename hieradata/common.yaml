@@ -29,5 +29,5 @@ apt::sources:
     release: 'trusty'
     repos: 'contrib'
 
-tmux::local_user: 'tmolnar'
+tmux::remote_user: 'tmolnar'
 vim::local_user: 'tmolnar'
