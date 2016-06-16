@@ -46,14 +46,9 @@ class vim(
     name    => 'vim-addon-manager',
     require => Package['vim-package'],
   }
-  exec { 'enable-vim-puppet':
-    command     => 'vim-addons -w install puppet',
-    creates     => '/var/lib/vim/addons/syntax/puppet.vim',
-    path        => ['/usr/bin', '/usr/sbin'],
-    environment => ['HOME=/root'],
-    require     => [
-      Package['vim-addon-manager-package'],
-      Package['vim-puppet-package'],
-    ],
+  vim_addons { 'vim-puppet':
+    ensure  => present,
+    name    => 'puppet',
+    require => Package['vim-addon-manager-package'],
   }
 }
