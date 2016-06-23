@@ -12,27 +12,30 @@
 
 # NAME
 
-Puppet masterless / nodeless module package
+Puppet masterless / nodeless module package (workflow for me) :)
 
 # SYNOPSIS
 
-## Installing modules
+## Installing external modules
 
 In the work directory:
 
-`puppet module install --target-dir /etc/puppet/modules puppetlabs-apt`
+`puppet module install -i /usr/share/puppet/modules puppetlabs-apt`
 
 ## Listing installed modules
 
 In the work directory:
 
-`puppet module list --modulepath /etc/puppet/modules`
+`puppet module list`
+
+Please note that the `modulepath` must be set by hand, or it must be run
+as root.
 
 ## Applying the configuration by hand
 
 As root or with sudo:
 
-`puppet apply /etc/puppet/manifests/site.pp`
+`puppet apply /etc/puppet/manifests/site.pp --logdest /var/log/puppet/puppet.log`
 
 or alternatively with the `post-merge` script:
 
@@ -57,7 +60,7 @@ Git will pick that up with a cron job, and it triggers a Puppet run.
 script to avoid configuration drifts if there is nothing to merge
 
 It is a scalable, flexible solution without any server overhead,
-there is not any running agents.
+there is not any running agents. The Puppet Master is the GIT itself.
 
 # REQUIREMENTS
 
