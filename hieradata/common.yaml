@@ -31,4 +31,4 @@ apt::sources:
     repos: 'contrib'
 
 tmux::remote_user: 'tmolnar'
-vim::local_user: 'tmolnar'
+vim::remote_user: 'tmolnar'

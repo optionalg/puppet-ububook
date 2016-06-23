@@ -4,12 +4,12 @@
 #
 # Params:
 #
-# local_user: user to configure vim to
+# remote_user: user to configure vim to
 # vim_for_root: enables vim configuration for root
 #
 
 class vim(
-  $local_user = 'tmolnar',
+  $remote_user = 'tmolnar',
   $vim_for_root = 'enable'
 ) {
   package { 'vim-package':
@@ -18,11 +18,11 @@ class vim(
   }
   file { 'vim-config':
     ensure  => file,
-    path    => "/home/${local_user}/.vimrc",
+    path    => "/home/${remote_user}/.vimrc",
     source  => 'puppet:///modules/vim/.vimrc',
     mode    => '0644',
-    owner   => $local_user,
-    group   => $local_user,
+    owner   => $remote_user,
+    group   => $remote_user,
     require => Package['vim-package'],
   }
   if $vim_for_root == 'enable' {
