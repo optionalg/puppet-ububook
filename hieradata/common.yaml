@@ -4,6 +4,7 @@ classes:
   - misc_pkgs
   - tmux
   - vim
+  - apt
 
 misc_pkgs::pkgs:
   - dkms
@@ -27,7 +28,7 @@ apt::sources:
   'virtualbox-repo':
     comment: 'Virtualbox repository'
     location: 'http://download.virtualbox.org/virtualbox/debian'
-    release: 'trusty'
+    release: 'precise'
     repos: 'contrib'
 
 tmux::remote_user: 'tmolnar'
