@@ -9,7 +9,7 @@ describe 'tmux' do
     'ensure' => 'file',
     'path'   => '/home/tmolnar/.tmux.conf',
     'source' => 'puppet:///modules/tmux/.tmux.conf',
-    'mode'   => '0755',
+    'mode'   => '0644',
     'owner'  => 'tmolnar',
     'group'  => 'tmolnar'
   ) }
