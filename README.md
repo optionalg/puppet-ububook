@@ -59,6 +59,10 @@ script to avoid configuration drifts if there is nothing to merge
 It is a scalable, flexible solution without any server overhead,
 there is not any running agents.
 
+# REQUIREMENTS
+
+ * [puppetlabs-apt](https://forge.puppet.com/puppetlabs/apt)
+
 # REFERENCES
 
 Masterless howto at DigitalOcean:
