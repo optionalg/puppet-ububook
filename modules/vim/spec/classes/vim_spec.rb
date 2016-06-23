@@ -9,7 +9,7 @@ describe 'vim' do
     'ensure'  => 'file',
     'path'    => '/home/tmolnar/.vimrc',
     'source'  => 'puppet:///modules/vim/.vimrc',
-    'mode'    => '0755',
+    'mode'    => '0644',
     'owner'   => 'tmolnar',
     'group'   => 'tmolnar'
   ) }
@@ -24,7 +24,7 @@ describe 'vim' do
       'ensure'  => 'file',
       'path'    => '/root/.vimrc',
       'source'  => 'puppet:///modules/vim/.vimrc',
-      'mode'    => '0755',
+      'mode'    => '0644',
       'owner'   => 'root',
       'group'   => 'root'
     ) }
